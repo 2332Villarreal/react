@@ -37,7 +37,7 @@ describe('ReactFragment', () => {
     );
   }
 
-  fit('retains component stacks when rethrowing an error', () => {
+  it('retains component stacks when rethrowing an error', () => {
     function Foo() {
       return (
         <RethrowingBoundary>
