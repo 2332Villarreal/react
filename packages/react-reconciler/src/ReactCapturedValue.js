@@ -23,20 +23,22 @@ export function createCapturedValueAtFiber<T>(
   value: T,
   source: Fiber,
 ): CapturedValue<T> {
-  let stack;
-  if (value && typeof value === 'object') {
-    if (hasOwnProperty.call(value, '_componentStack')) {
-      stack = (value._componentStack: any);
-    } else {
-      stack = (value: any)._componentStack = getStackByFiberInDevAndProd(
-        source,
-      );
-    }
-  } else {
-    stack = getStackByFiberInDevAndProd(source);
-  }
   // If the value is an error, call this function immediately after it is thrown
   // so the stack is accurate.
+  let stack;
+  if (value != null && hasOwnProperty.call(value, '_componentStack')) {
+    // Read the stack from the value if it was set by an earlier capture
+    stack = (value: any)._componentStack;
+  } else if (Object.isExtensible((value: any))) {
+    // If the value is an extensible type, stash the stack on the value. We
+    // check extensibility for the edge case where one throws a frozen object or
+    // something inherently non-extensible like null or a string
+    stack = (value: any)._componentStack = getStackByFiberInDevAndProd(source);
+  } else {
+    // We can't stash the stack on the value
+    stack = getStackByFiberInDevAndProd(source);
+  }
+
   return {
     value,
     source,
