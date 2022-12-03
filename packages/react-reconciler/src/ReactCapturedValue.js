@@ -23,15 +23,24 @@ export function createCapturedValueAtFiber<T>(
   value: T,
   source: Fiber,
 ): CapturedValue<T> {
-  if (!hasOwnProperty.call(value, '_componentStack')) {
-    (value: any)._componentStack = getStackByFiberInDevAndProd(source);
+  let stack;
+  if (value && typeof value === 'object') {
+    if (hasOwnProperty.call(value, '_componentStack')) {
+      stack = (value._componentStack: any);
+    } else {
+      stack = (value: any)._componentStack = getStackByFiberInDevAndProd(
+        source,
+      );
+    }
+  } else {
+    stack = getStackByFiberInDevAndProd(source);
   }
   // If the value is an error, call this function immediately after it is thrown
   // so the stack is accurate.
   return {
     value,
     source,
-    stack: (value: any)._componentStack,
+    stack,
     digest: null,
   };
 }
