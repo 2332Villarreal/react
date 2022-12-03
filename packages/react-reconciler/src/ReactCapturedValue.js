@@ -52,7 +52,10 @@ export function createCapturedValue<T>(
   digest: ?string,
   stack: ?string,
 ): CapturedValue<T> {
-  if (!hasOwnProperty.call(value, '_componentStack')) {
+  if (
+    Object.isExtensible((value: any)) &&
+    !hasOwnProperty.call(value, '_componentStack')
+  ) {
     (value: any)._componentStack = stack;
   }
   return {
