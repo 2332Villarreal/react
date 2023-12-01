@@ -3012,15 +3012,12 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*":
-  version "12.7.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
-  integrity sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
-
-"@types/node@^16.11.26":
-  version "16.18.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.14.tgz#5465ce598486a703caddbefe8603f8a2cffa3461"
-  integrity sha512-wvzClDGQXOCVNU4APPopC2KtMYukaF1MN/W3xAmslx22Z4/IF1/izDMekuyoUlwfnDHYCIZGaj7jMwnJKBTxKw==
+"@types/node@*", "@types/node@^18.11.18":
+  version "18.19.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.1.tgz#e3ed7d5ab5ea21f33a4503decb2171e0d8f53070"
+  integrity sha512-mZJ9V11gG5Vp0Ox2oERpeFDl+JvCwK24PGy76vVY/UgBtjwJWc5rYBThFxmbnYOm9UPZNm6wEl/sxHt2SU7x9A==
+  dependencies:
+    undici-types "~5.26.4"
 
 "@types/prettier@^1.0.0 || ^2.0.0", "@types/prettier@^2.1.5":
   version "2.7.2"
@@ -6579,13 +6576,13 @@ electron-to-chromium@^1.4.284:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz#61046d1e4cab3a25238f6bf7413795270f125592"
   integrity sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==
 
-electron@^23.1.2:
-  version "23.1.2"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-23.1.2.tgz#f03e361c94f8dd2407963b5461d19aadea335316"
-  integrity sha512-ajE6xzIwH7swf8TlTU5WklDqpI3mPj4Am6690YrpCXzcp+E+dmMBXIajUUNt4joDrFhJC/lC6ZqDS2Q1BApKgQ==
+electron@^24.8.5:
+  version "24.8.5"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-24.8.5.tgz#795e13670f89de927bc4e40fd2a64ff7f9f7c3b6"
+  integrity sha512-CWSF0CrD1XhxyoXUcCcEoJB8orMTHuOrkj2s87XU11vjgVJHhzhCBh9TVqhMQt7U6TtcGYa5kDIiLRekxJRaRA==
   dependencies:
     "@electron/get" "^2.0.0"
-    "@types/node" "^16.11.26"
+    "@types/node" "^18.11.18"
     extract-zip "^2.0.1"
 
 emittery@^0.13.1:
@@ -6906,7 +6903,6 @@ eslint-plugin-no-unsanitized@3.1.2:
 
 "eslint-plugin-react-internal@link:./scripts/eslint-rules":
   version "0.0.0"
-  uid ""
 
 eslint-plugin-react@^6.7.1:
   version "6.10.3"
@@ -12890,9 +12886,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.8:
     scheduler "^0.13.0"
 
 react-is@^16.8.1, react-is@^17.0.1, "react-is@npm:react-is":
-  version "17.0.2"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
-  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
+  version "18.2.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
+  integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -15168,6 +15164,11 @@ unc-path-regex@^0.1.0, unc-path-regex@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
   integrity sha1-5z3T17DXxe2G+6xrCufYxqadUPo=
+
+undici-types@~5.26.4:
+  version "5.26.5"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
+  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
